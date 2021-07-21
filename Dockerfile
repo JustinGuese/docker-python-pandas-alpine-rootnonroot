@@ -4,6 +4,8 @@ MAINTAINER Justin Guese <info@datafortress.cloud>
 RUN apk update && apk upgrade --no-cache
 RUN apk add --no-cache g++
 RUN pip install pandas numpy
+# needed for pandas
+RUN apk add libstdc++
 RUN apk del g++
 RUN mkdir /app
 WORKDIR /app
